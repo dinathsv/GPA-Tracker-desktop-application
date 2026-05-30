@@ -41,9 +41,13 @@ class ProfileFrame(ctk.CTkFrame):
     def load_data(self):
         data = database.load_profile()
         if data:
+            self.name_entry.delete(0, 'end')
             self.name_entry.insert(0, data[0])
+            self.uni_entry.delete(0, 'end')
             self.uni_entry.insert(0, data[1])
+            self.prog_entry.delete(0, 'end')
             self.prog_entry.insert(0, data[2])
+            self.year_entry.delete(0, 'end')
             self.year_entry.insert(0, str(data[3]))
 
     def save_profile(self):
